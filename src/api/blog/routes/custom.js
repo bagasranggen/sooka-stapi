@@ -4,9 +4,6 @@ module.exports = {
       method: 'GET',
       path: '/blogs/:slug',
       handler: 'blog.findOne',
-      config: {
-        auth: false
-      }
     }
   ]
 }
