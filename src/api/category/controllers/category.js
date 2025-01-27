@@ -1,16 +1,16 @@
 'use strict';
 
 /**
- * blog controller
+ * category controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::blog.blog', ({strapi}) => ({
+module.exports = createCoreController('api::category.category', ({strapi}) => ({
   async findOne(ctx) {
     const {id} = ctx.params;
 
-    const entity = await strapi.db.query('api::blog.blog').findOne({
+    const entity = await strapi.db.query('api::category.category').findOne({
       where: {slug:id}
     })
 
