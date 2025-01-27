@@ -6,16 +6,16 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::category.category', ({strapi}) => ({
+module.exports = createCoreController('api::category.category', ({ strapi }) => ({
   async findOne(ctx) {
-    const {id} = ctx.params;
+    const { id } = ctx.params;
 
     const entity = await strapi.db.query('api::category.category').findOne({
-      where: {slug:id}
-    })
+      where: { slug: id },
+    });
 
     const sanitizedEntity = await this.sanitizeOutput(entity);
 
-    return this.transformResponse(sanitizedEntity)
-  }
+    return this.transformResponse(sanitizedEntity);
+  },
 }));
