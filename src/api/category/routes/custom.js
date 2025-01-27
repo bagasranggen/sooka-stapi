@@ -2,8 +2,8 @@ module.exports = {
   routes: [
     {
       method: 'GET',
-      path: '/blogs/:slug',
-      handler: 'blog.findOne',
+      path: '/categories/:slug',
+      handler: 'category.findOne',
     }
   ]
 }
