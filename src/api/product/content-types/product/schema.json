@@ -28,6 +28,43 @@
     },
     "uri": {
       "type": "string"
+    },
+    "prices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.prices-list",
+      "required": true
+    },
+    "add_ons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::add-on.add-on"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bannerMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "stickyMedia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "marqueeMedia": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

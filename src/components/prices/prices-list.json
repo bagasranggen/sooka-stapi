@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_prices_prices_lists",
+  "info": {
+    "displayName": "Base Price",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "notes": {
+      "type": "string",
+      "required": true
+    },
+    "salePrice": {
+      "type": "biginteger"
+    }
+  }
+}

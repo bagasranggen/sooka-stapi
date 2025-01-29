@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "add_ons",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Category",
-    "description": ""
+    "singularName": "add-on",
+    "pluralName": "add-ons",
+    "displayName": "Add-on"
   },
   "options": {
     "draftAndPublish": true
@@ -18,7 +17,11 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
+      "required": true,
+      "targetField": "title"
+    },
+    "price": {
+      "type": "biginteger",
       "required": true
     }
   }
