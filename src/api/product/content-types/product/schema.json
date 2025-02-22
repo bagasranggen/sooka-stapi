@@ -40,9 +40,6 @@
       "relation": "oneToMany",
       "target": "api::add-on.add-on"
     },
-    "description": {
-      "type": "text"
-    },
     "bannerMedia": {
       "type": "media",
       "multiple": false,
@@ -60,11 +57,15 @@
       ]
     },
     "marqueeMedia": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }

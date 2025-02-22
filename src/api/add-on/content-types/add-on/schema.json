@@ -4,7 +4,8 @@
   "info": {
     "singularName": "add-on",
     "pluralName": "add-ons",
-    "displayName": "Add-on"
+    "displayName": "Add-on",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,6 +24,23 @@
     "price": {
       "type": "biginteger",
       "required": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": false
+    },
+    "media": {
+      "type": "biginteger"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

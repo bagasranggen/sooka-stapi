@@ -331,6 +331,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAddOnAddOn extends Struct.CollectionTypeSchema {
   collectionName: 'add_ons';
   info: {
+    description: '';
     displayName: 'Add-on';
     pluralName: 'add-ons';
     singularName: 'add-on';
@@ -341,8 +342,11 @@ export interface ApiAddOnAddOn extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::add-on.add-on'> & Schema.Attribute.Private;
+    media: Schema.Attribute.BigInteger;
     price: Schema.Attribute.BigInteger & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
@@ -366,6 +370,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::category.category'> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -393,7 +398,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::product.product'> & Schema.Attribute.Private;
     marqueeMedia: Schema.Attribute.Media<'images', true>;
